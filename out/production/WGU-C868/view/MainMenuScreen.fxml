@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
+            prefHeight="300.0" prefWidth="480.0" xmlns="http://javafx.com/javafx/11"
+            xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MainMenuController">
+    <children>
+        <HBox prefHeight="97.0" prefWidth="480.0">
+            <children>
+                <Label alignment="BOTTOM_CENTER" contentDisplay="CENTER" prefHeight="129.0" prefWidth="481.0"
+                       text="What would you like to do?">
+                    <font>
+                        <Font name="System Bold" size="24.0"/>
+                    </font>
+                    <padding>
+                        <Insets left="10.0" right="10.0" top="10.0"/>
+                    </padding>
+                </Label>
+            </children>
+        </HBox>
+        <HBox layoutY="107.0" prefHeight="116.0" prefWidth="480.0">
+            <children>
+                <VBox alignment="CENTER_RIGHT" prefHeight="130.0" prefWidth="240.0" spacing="10.0">
+                    <children>
+                        <Button maxWidth="-Infinity" minHeight="50.0" minWidth="-Infinity" mnemonicParsing="false"
+                                onAction="#onActionCustomer" prefWidth="150.0" text="View Customer Records"/>
+                        <Button maxWidth="-Infinity" minHeight="50.0" minWidth="-Infinity" mnemonicParsing="false"
+                                onAction="#onActionAppointments" prefWidth="150.0" text="View Appointments"/>
+                    </children>
+                    <opaqueInsets>
+                        <Insets/>
+                    </opaqueInsets>
+                    <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0"/>
+                    </padding>
+                </VBox>
+                <VBox alignment="CENTER_LEFT" prefHeight="235.0" prefWidth="235.0" spacing="10.0">
+                    <children>
+                        <Button maxWidth="-Infinity" minWidth="-Infinity" mnemonicParsing="false"
+                                onAction="#onActionReports" prefHeight="50.0" prefWidth="150.0" text="View Reports"/>
+                        <Button maxWidth="-Infinity" minWidth="-Infinity" mnemonicParsing="false"
+                                onAction="#onActionExit" prefHeight="50.0" prefWidth="150.0" text="Exit"/>
+                    </children>
+                    <HBox.margin>
+                        <Insets/>
+                    </HBox.margin>
+                    <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0"/>
+                    </padding>
+                </VBox>
+            </children>
+        </HBox>
+    </children>
+</AnchorPane>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0"
+            prefWidth="600.0" xmlns="http://javafx.com/javafx/11" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="controller.LoginScreenController">
+    <bottom>
+        <HBox alignment="BOTTOM_RIGHT" prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+            <BorderPane.margin>
+                <Insets bottom="5.0" right="5.0"/>
+            </BorderPane.margin>
+            <Button fx:id="ExitButton" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false"
+                    onAction="#onActionExit" prefHeight="35.0" prefWidth="50.0" text="Exit" textAlignment="JUSTIFY"/>
+        </HBox>
+    </bottom>
+    <center>
+        <VBox alignment="CENTER" fillWidth="false" spacing="11.0" BorderPane.alignment="CENTER">
+            <BorderPane.margin>
+                <Insets top="60.0"/>
+            </BorderPane.margin>
+            <Label fx:id="appNameLabel" prefHeight="67.0" prefWidth="403.0" text="Sure Smiles, Inc. Scheduling System">
+                <font>
+                    <Font name="System Bold" size="24.0"/>
+                </font>
+                <VBox.margin>
+                    <Insets bottom="27.0"/>
+                </VBox.margin>
+            </Label>
+            <TextField fx:id="usernameField" prefHeight="35.0" prefWidth="260.0" promptText="Username"/>
+            <TextField fx:id="passwordField" layoutX="10.0" layoutY="10.0" prefHeight="35.0" prefWidth="260.0"
+                       promptText="Password"/>
+            <HBox prefHeight="35.0" prefWidth="260.0">
+                <Label fx:id="locationLabel" contentDisplay="CENTER" prefHeight="35.0" prefWidth="260.0"
+                       text="Location:"/>
+                <Label fx:id="zoneIDLabel" contentDisplay="CENTER" prefHeight="17.0" prefWidth="341.0"/>
+            </HBox>
+            <Button fx:id="LogIn" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false"
+                    onAction="#onActionLogIn" prefHeight="35.0" prefWidth="260.0" text="Log In"/>
+            <HBox prefHeight="100.0" prefWidth="200.0"/>
+        </VBox>
+    </center>
+</BorderPane>

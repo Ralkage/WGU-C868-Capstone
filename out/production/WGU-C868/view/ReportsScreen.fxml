@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<AnchorPane id="AnchorPane" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/11"
+            xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ReportsScreenController">
+    <children>
+        <TabPane prefHeight="720.0" prefWidth="1280.0" tabClosingPolicy="UNAVAILABLE">
+            <tabs>
+                <Tab fx:id="typeMonthTab" text="Total Customer by Type and Month">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                            <children>
+                                <VBox alignment="TOP_CENTER" prefHeight="691.0" prefWidth="1280.0">
+                                    <children>
+                                        <TableView fx:id="typeMonthTable" prefHeight="697.0" prefWidth="1177.0">
+                                            <columns>
+                                                <TableColumn fx:id="monthColumn" minWidth="0.0" prefWidth="233.0"
+                                                             text="Month"/>
+                                                <TableColumn fx:id="reportTypeColumn" prefWidth="196.0" text="Type"/>
+                                                <TableColumn fx:id="totalColumn" minWidth="0.0" prefWidth="269.0"
+                                                             text="Count"/>
+                                            </columns>
+                                        </TableView>
+                                        <HBox alignment="CENTER" prefHeight="80.0" prefWidth="200.0" spacing="10.0">
+                                            <children>
+                                                <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
+                                                        minWidth="-Infinity" mnemonicParsing="false"
+                                                        onAction="#onActionReturnToMainMenu" prefHeight="25.0"
+                                                        prefWidth="130.0" text="Return to Main Menu"/>
+                                                <Button layoutX="585.0" layoutY="10.0" maxHeight="-Infinity"
+                                                        maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
+                                                        mnemonicParsing="false" onAction="#onActionExit"
+                                                        prefHeight="25.0" prefWidth="130.0" text="Exit"/>
+                                            </children>
+                                        </HBox>
+                                    </children>
+                                </VBox>
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+                <Tab fx:id="contactTableTab" text="Contacts Appointment Schedule">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                            <children>
+                                <VBox alignment="TOP_CENTER" prefHeight="691.0" prefWidth="1280.0">
+                                    <children>
+                                        <HBox alignment="CENTER" prefHeight="80.0" prefWidth="200.0" spacing="20.0">
+                                            <children>
+                                                <ComboBox fx:id="contactComboBox" onAction="#onActionContact"
+                                                          prefWidth="150.0" promptText="Select Contact"/>
+                                            </children>
+                                        </HBox>
+                                        <TableView fx:id="ContactTable" prefHeight="632.0" prefWidth="1280.0">
+                                            <columns>
+                                                <TableColumn fx:id="appointmentColumn" prefWidth="109.33331549167633"
+                                                             text="Appointment ID"/>
+                                                <TableColumn fx:id="titleColumn" prefWidth="200.00000762939453"
+                                                             text="Title"/>
+                                                <TableColumn fx:id="typeColumn" prefWidth="187.33331298828125"
+                                                             text="Type"/>
+                                                <TableColumn fx:id="descriptionColumn" prefWidth="330.6666564941406"
+                                                             text="Description"/>
+                                                <TableColumn fx:id="startColumn" minWidth="0.0"
+                                                             prefWidth="168.6666259765625" text="Start"/>
+                                                <TableColumn fx:id="endColumn" prefWidth="168.0" text="End"/>
+                                                <TableColumn fx:id="customerIdColumn" prefWidth="118.0" text="Cust ID"/>
+                                            </columns>
+                                        </TableView>
+                                        <HBox alignment="CENTER" prefHeight="80.0" prefWidth="200.0" spacing="10.0">
+                                            <children>
+                                                <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
+                                                        minWidth="-Infinity" mnemonicParsing="false"
+                                                        onAction="#onActionReturnToMainMenu" prefHeight="25.0"
+                                                        prefWidth="130.0" text="Return to Main Menu"/>
+                                                <Button layoutX="585.0" layoutY="10.0" maxHeight="-Infinity"
+                                                        maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
+                                                        mnemonicParsing="false" onAction="#onActionExit"
+                                                        prefHeight="25.0" prefWidth="130.0" text="Exit"/>
+                                            </children>
+                                        </HBox>
+                                    </children>
+                                </VBox>
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+                <Tab fx:id="pieChartTab" text="Pie Chart of Customers by Country">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                            <children>
+                                <VBox alignment="TOP_CENTER" prefHeight="692.0" prefWidth="1280.0">
+                                    <children>
+                                        <PieChart fx:id="customerPie" maxWidth="-Infinity" minHeight="-Infinity"
+                                                  minWidth="-Infinity" prefHeight="611.0" prefWidth="761.0"/>
+                                        <HBox alignment="CENTER" prefHeight="127.0" prefWidth="1280.0" spacing="10.0">
+                                            <children>
+                                                <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
+                                                        minWidth="-Infinity" mnemonicParsing="false"
+                                                        onAction="#onActionReturnToMainMenu" prefHeight="25.0"
+                                                        prefWidth="130.0" text="Return to Main Menu"/>
+                                                <Button layoutX="585.0" layoutY="10.0" maxHeight="-Infinity"
+                                                        maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
+                                                        mnemonicParsing="false" onAction="#onActionExit"
+                                                        prefHeight="25.0" prefWidth="130.0" text="Exit"/>
+                                            </children>
+                                        </HBox>
+                                    </children>
+                                    <padding>
+                                        <Insets top="30.0"/>
+                                    </padding>
+                                </VBox>
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+            </tabs>
+        </TabPane>
+    </children>
+</AnchorPane>

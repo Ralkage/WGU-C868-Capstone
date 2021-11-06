@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+<AnchorPane id="AnchorPane" fx:id="anchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
+            minWidth="-Infinity" prefHeight="437.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/11"
+            xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.CustomersScreenController">
+    <children>
+        <VBox alignment="CENTER" layoutY="2.0" pickOnBounds="false" prefHeight="420.0" prefWidth="1200.0">
+            <children>
+                <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="1200.0" spacing="10.0">
+                    <children>
+                        <HBox alignment="CENTER_LEFT" prefHeight="29.0" prefWidth="626.0" spacing="10.0">
+                            <children>
+                                <Label text="Search Customers">
+                                    <font>
+                                        <Font name="System Bold" size="12.0"/>
+                                    </font>
+                                </Label>
+                                <TextField fx:id="keywordTextField" prefHeight="25.0" prefWidth="281.0"
+                                           promptText="Name, Phone Number, Address, or Postal Code..."/>
+                            </children>
+                        </HBox>
+                        <HBox prefHeight="29.0" prefWidth="178.0"/>
+                    </children>
+                    <VBox.margin>
+                        <Insets top="5.0"/>
+                    </VBox.margin>
+                </HBox>
+                <HBox alignment="TOP_CENTER" prefHeight="300.0" prefWidth="1161.0" spacing="10.0">
+                    <children>
+                        <VBox prefHeight="500.0" prefWidth="335.0" spacing="10.0">
+                            <children>
+                                <HBox alignment="CENTER" prefHeight="60.0" prefWidth="200.0">
+                                    <children>
+                                        <Label fx:id="addCustomerLabel" text="Add New Customer">
+                                            <font>
+                                                <Font name="System Bold" size="18.0"/>
+                                            </font>
+                                        </Label>
+                                    </children>
+                                </HBox>
+                                <HBox alignment="CENTER" prefHeight="40.0" prefWidth="200.0" spacing="10.0">
+                                    <opaqueInsets>
+                                        <Insets/>
+                                    </opaqueInsets>
+                                    <padding>
+                                        <Insets left="20.0" right="20.0"/>
+                                    </padding>
+                                    <children>
+                                        <Button maxWidth="-Infinity" minWidth="-Infinity" mnemonicParsing="false"
+                                                onAction="#onActionAdd" prefWidth="130.0" text="Add"/>
+                                        <Button maxWidth="-Infinity" minWidth="-Infinity" mnemonicParsing="false"
+                                                onAction="#onActionUpdate" prefWidth="130.0" text="Update"/>
+                                    </children>
+                                </HBox>
+                                <HBox alignment="CENTER_LEFT" prefHeight="40.0" prefWidth="200.0" spacing="10.0">
+                                    <children>
+                                        <Label maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
+                                               minWidth="-Infinity" prefHeight="17.0" prefWidth="81.0" text="ID"/>
+                                        <TextField fx:id="customerID" disable="true" maxHeight="-Infinity"
+                                                   maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
+                                                   prefHeight="25.0" prefWidth="200.0" promptText="Auto Gen."/>
+                                    </children>
+                                    <opaqueInsets>
+                                        <Insets/>
+                                    </opaqueInsets>
+                                    <padding>
+                                        <Insets left="20.0" right="20.0"/>
+                                    </padding>
+                                </HBox>
+                                <HBox alignment="CENTER_LEFT" layoutX="12.0" layoutY="12.0" prefHeight="40.0"
+                                      prefWidth="200.0" spacing="10.0">
+                                    <children>
+                                        <Label maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
+                                               minWidth="-Infinity" prefHeight="17.0" prefWidth="81.0" text="Name"/>
+                                        <TextField fx:id="customerName" maxHeight="-Infinity" maxWidth="-Infinity"
+                                                   minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0"
+                                                   prefWidth="200.0"/>
+                                    </children>
+                                    <opaqueInsets>
+                                        <Insets/>
+                                    </opaqueInsets>
+                                    <padding>
+                                        <Insets left="20.0" right="20.0"/>
+                                    </padding>
+                                </HBox>
+                                <HBox alignment="CENTER_LEFT" layoutX="12.0" layoutY="52.0" prefHeight="40.0"
+                                      prefWidth="200.0" spacing="10.0">
+                                    <children>
+                                        <Label maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
+                                               minWidth="-Infinity" prefHeight="17.0" prefWidth="81.0"
+                                               text="Street Address"/>
+                                        <TextField fx:id="customerAddress" maxHeight="-Infinity" maxWidth="-Infinity"
+                                                   minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0"
+                                                   prefWidth="200.0"/>
+                                    </children>
+                                    <opaqueInsets>
+                                        <Insets/>
+                                    </opaqueInsets>
+                                    <padding>
+                                        <Insets left="20.0" right="20.0"/>
+                                    </padding>
+                                </HBox>
+                                <HBox alignment="CENTER_LEFT" layoutX="12.0" layoutY="132.0" prefHeight="40.0"
+                                      prefWidth="200.0" spacing="10.0">
+                                    <children>
+                                        <Label maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
+                                               minWidth="-Infinity" prefHeight="17.0" prefWidth="81.0" text="Country"/>
+                                        <ComboBox fx:id="countryComboBox" maxWidth="-Infinity" minWidth="-Infinity"
+                                                  onAction="#onActionCountry" prefWidth="200.0"
+                                                  promptText="Select Country"/>
+                                    </children>
+                                    <opaqueInsets>
+                                        <Insets/>
+                                    </opaqueInsets>
+                                    <padding>
+                                        <Insets left="20.0" right="20.0"/>
+                                    </padding>
+                                </HBox>
+                                <HBox alignment="CENTER_LEFT" layoutX="12.0" layoutY="92.0" prefHeight="40.0"
+                                      prefWidth="200.0" spacing="10.0">
+                                    <children>
+                                        <Label maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
+                                               minWidth="-Infinity" prefHeight="17.0" prefWidth="81.0"
+                                               text="State/Province"/>
+                                        <ComboBox fx:id="stateComboBox" maxWidth="-Infinity" minWidth="-Infinity"
+                                                  prefWidth="200.0" promptText="Select State/Province"/>
+                                    </children>
+                                    <opaqueInsets>
+                                        <Insets/>
+                                    </opaqueInsets>
+                                    <padding>
+                                        <Insets left="20.0" right="20.0"/>
+                                    </padding>
+                                </HBox>
+                                <HBox alignment="CENTER_LEFT" layoutX="12.0" layoutY="92.0" prefHeight="40.0"
+                                      prefWidth="200.0" spacing="10.0">
+                                    <children>
+                                        <Label maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
+                                               minWidth="-Infinity" prefHeight="17.0" prefWidth="81.0"
+                                               text="Postal Code"/>
+                                        <TextField fx:id="customerZip" maxHeight="-Infinity" maxWidth="-Infinity"
+                                                   minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0"
+                                                   prefWidth="200.0"/>
+                                    </children>
+                                    <opaqueInsets>
+                                        <Insets/>
+                                    </opaqueInsets>
+                                    <padding>
+                                        <Insets left="20.0" right="20.0"/>
+                                    </padding>
+                                </HBox>
+                                <HBox alignment="CENTER_LEFT" layoutX="12.0" layoutY="92.0" prefHeight="40.0"
+                                      prefWidth="200.0" spacing="10.0">
+                                    <children>
+                                        <Label maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
+                                               minWidth="-Infinity" prefHeight="17.0" prefWidth="81.0"
+                                               text="Phone Number"/>
+                                        <TextField fx:id="customerPhone" maxHeight="-Infinity" maxWidth="-Infinity"
+                                                   minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0"
+                                                   prefWidth="200.0"/>
+                                    </children>
+                                    <opaqueInsets>
+                                        <Insets/>
+                                    </opaqueInsets>
+                                    <padding>
+                                        <Insets left="20.0" right="20.0"/>
+                                    </padding>
+                                </HBox>
+                                <HBox alignment="CENTER" layoutX="11.0" layoutY="265.0" prefHeight="50.0"
+                                      prefWidth="200.0" spacing="10.0">
+                                    <opaqueInsets>
+                                        <Insets/>
+                                    </opaqueInsets>
+                                    <children>
+                                        <Button maxWidth="-Infinity" minWidth="-Infinity" mnemonicParsing="false"
+                                                onAction="#onActionSave" prefWidth="130.0" text="Save"/>
+                                        <Button maxWidth="-Infinity" minWidth="-Infinity" mnemonicParsing="false"
+                                                onAction="#onActionClear" prefWidth="130.0" text="Clear"/>
+                                    </children>
+                                </HBox>
+                            </children>
+                            <padding>
+                                <Insets bottom="5.0" top="5.0"/>
+                            </padding>
+                        </VBox>
+                        <TableView fx:id="customerTable" prefHeight="356.0" prefWidth="781.0">
+                            <columns>
+                                <TableColumn fx:id="customerIdColumn" prefWidth="90.00006103515625" text="Customer ID"/>
+                                <TableColumn fx:id="nameColumn" prefWidth="67.33331298828125" text="Name"/>
+                                <TableColumn fx:id="phoneColumn" prefWidth="123.0" text="Phone Number"/>
+                                <TableColumn fx:id="addressColumn" prefWidth="144.0" text="Address"/>
+                                <TableColumn fx:id="countryColumn" prefWidth="144.0" text="Country"/>
+                                <TableColumn fx:id="divisionColumn" prefWidth="130.0" text="State/Province"/>
+                                <TableColumn fx:id="zipColumn" prefWidth="77.0" text="Postal Code"/>
+                            </columns>
+                        </TableView>
+                    </children>
+                    <opaqueInsets>
+                        <Insets/>
+                    </opaqueInsets>
+                    <padding>
+                        <Insets top="10.0"/>
+                    </padding>
+                </HBox>
+                <HBox alignment="CENTER" prefHeight="40.0" prefWidth="1200.0" spacing="10.0">
+                    <children>
+                        <HBox alignment="CENTER_RIGHT" prefHeight="40.0" prefWidth="851.0" spacing="20.0">
+                            <children>
+                                <Button layoutX="260.0" layoutY="34.0" maxWidth="-Infinity" minWidth="-Infinity"
+                                        mnemonicParsing="false" onAction="#onActionDelete" prefWidth="130.0"
+                                        text="Delete Customer"/>
+                            </children>
+                            <padding>
+                                <Insets top="5.0"/>
+                            </padding>
+                        </HBox>
+                        <HBox alignment="CENTER" prefHeight="40.0" prefWidth="345.0" spacing="10.0">
+                            <opaqueInsets>
+                                <Insets/>
+                            </opaqueInsets>
+                            <children>
+                                <Button maxWidth="-Infinity" minWidth="-Infinity" mnemonicParsing="false"
+                                        onAction="#onActionReturnToMainMenu" prefWidth="130.0"
+                                        text="Return to Main Menu">
+                                    <HBox.margin>
+                                        <Insets top="5.0"/>
+                                    </HBox.margin>
+                                </Button>
+                                <Button maxWidth="-Infinity" mnemonicParsing="false" onAction="#onActionExit"
+                                        prefWidth="130.0" text="Exit Program">
+                                    <HBox.margin>
+                                        <Insets top="5.0"/>
+                                    </HBox.margin>
+                                </Button>
+                            </children>
+                        </HBox>
+                    </children>
+                </HBox>
+            </children>
+            <opaqueInsets>
+                <Insets/>
+            </opaqueInsets>
+        </VBox>
+    </children>
+</AnchorPane>

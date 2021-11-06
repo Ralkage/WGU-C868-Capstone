@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+<AnchorPane id="AnchorPane" prefHeight="661.0" prefWidth="1401.0" xmlns="http://javafx.com/javafx/11"
+            xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.AppointmentsScreenController">
+    <children>
+        <VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
+              minWidth="-Infinity" prefHeight="585.0" prefWidth="1393.0" spacing="10.0">
+            <children>
+                <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                    <children>
+                        <HBox alignment="CENTER_RIGHT" prefHeight="25.0" prefWidth="1350.0" spacing="20.0">
+                            <children>
+                                <HBox prefHeight="25.0" prefWidth="445.0" spacing="10.0">
+                                    <children>
+                                        <Label alignment="CENTER_RIGHT" prefHeight="25.0" prefWidth="130.0"
+                                               text="Search Appointments">
+                                            <font>
+                                                <Font name="System Bold" size="12.0"/>
+                                            </font>
+                                        </Label>
+                                        <TextField fx:id="keywordTextField" prefHeight="25.0" prefWidth="293.0"
+                                                   promptText="Title, Contact Name, Type, Description, or Location..."/>
+                                    </children>
+                                </HBox>
+                                <RadioButton fx:id="allButton" layoutX="646.0" layoutY="10.0" mnemonicParsing="false"
+                                             onAction="#allRadio" selected="true" text="All">
+                                    <toggleGroup>
+                                        <ToggleGroup fx:id="sortToggle"/>
+                                    </toggleGroup>
+                                </RadioButton>
+                                <RadioButton fx:id="monthButton" mnemonicParsing="false" onAction="#monthRadio"
+                                             text="This Month" toggleGroup="$sortToggle"/>
+                                <RadioButton fx:id="weekButton" mnemonicParsing="false" onAction="#weekRadio"
+                                             text="This Week" toggleGroup="$sortToggle"/>
+                            </children>
+                            <opaqueInsets>
+                                <Insets/>
+                            </opaqueInsets>
+                        </HBox>
+                        <HBox alignment="CENTER" prefHeight="17.0" prefWidth="640.0" spacing="10.0"/>
+                    </children>
+                </HBox>
+                <HBox alignment="CENTER" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
+                      prefHeight="575.0" prefWidth="1389.0" spacing="10.0">
+                    <children>
+                        <VBox prefHeight="500.0" prefWidth="325.0" spacing="10.0">
+                            <children>
+                                <HBox alignment="CENTER" prefHeight="50.0" prefWidth="200.0">
+                                    <children>
+                                        <Label fx:id="appointmentLabel" text="Add New Appointment">
+                                            <font>
+                                                <Font name="System Bold" size="18.0"/>
+                                            </font>
+                                            <HBox.margin>
+                                                <Insets/>
+                                            </HBox.margin>
+                                        </Label>
+                                    </children>
+                                </HBox>
+                                <HBox alignment="CENTER" prefHeight="43.0" prefWidth="325.0" spacing="10.0">
+                                    <children>
+                                        <Button maxWidth="-Infinity" minWidth="-Infinity" mnemonicParsing="false"
+                                                onAction="#onActionAdd" prefWidth="130.0" text="Add Appointment"/>
+                                        <Button maxWidth="-Infinity" minWidth="-Infinity" mnemonicParsing="false"
+                                                onAction="#onActionUpdate" prefWidth="130.0" text="Update Appointment"/>
+                                    </children>
+                                    <VBox.margin>
+                                        <Insets/>
+                                    </VBox.margin>
+                                    <padding>
+                                        <Insets top="5.0"/>
+                                    </padding>
+                                </HBox>
+                                <HBox alignment="CENTER" prefHeight="25.0" prefWidth="402.0" spacing="10.0">
+                                    <children>
+                                        <Label maxWidth="-Infinity" minWidth="-Infinity" prefWidth="90.0"
+                                               text="Appointment ID"/>
+                                        <TextField fx:id="appointmentID" disable="true" maxWidth="-Infinity"
+                                                   minWidth="-Infinity" prefWidth="200.0" promptText="Auto Gen."/>
+                                    </children>
+                                </HBox>
+                                <HBox alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="25.0"
+                                      prefWidth="402.0" spacing="10.0">
+                                    <children>
+                                        <Label maxWidth="-Infinity" minWidth="-Infinity" prefWidth="90.0" text="Title"/>
+                                        <TextField fx:id="appointmentTitle" maxWidth="-Infinity" minWidth="-Infinity"
+                                                   prefWidth="200.0" promptText="Title"/>
+                                    </children>
+                                </HBox>
+                                <HBox alignment="CENTER" layoutX="10.0" layoutY="45.0" prefHeight="25.0"
+                                      prefWidth="402.0" spacing="10.0">
+                                    <children>
+                                        <Label maxWidth="-Infinity" minWidth="-Infinity" prefWidth="90.0"
+                                               text="Description"/>
+                                        <TextField fx:id="appointmentDescription" maxWidth="-Infinity"
+                                                   minWidth="-Infinity" prefWidth="200.0" promptText="Description"/>
+                                    </children>
+                                </HBox>
+                                <HBox alignment="CENTER" layoutX="10.0" layoutY="80.0" prefHeight="25.0"
+                                      prefWidth="402.0" spacing="10.0">
+                                    <children>
+                                        <Label maxWidth="-Infinity" minWidth="-Infinity" prefWidth="90.0"
+                                               text="Location"/>
+                                        <ComboBox fx:id="locationComboBox" prefWidth="200.0"
+                                                  promptText="Select Location"/>
+                                    </children>
+                                </HBox>
+                                <HBox alignment="CENTER" layoutX="10.0" layoutY="115.0" prefHeight="25.0"
+                                      prefWidth="402.0" spacing="10.0">
+                                    <children>
+                                        <Label maxWidth="-Infinity" minWidth="-Infinity" prefWidth="90.0"
+                                               text="Contact"/>
+                                        <ComboBox fx:id="contactComboBox" prefWidth="200.0"
+                                                  promptText="Select Contact"/>
+                                    </children>
+                                </HBox>
+                                <HBox alignment="CENTER" layoutX="10.0" layoutY="150.0" prefHeight="25.0"
+                                      prefWidth="402.0" spacing="10.0">
+                                    <children>
+                                        <Label maxWidth="-Infinity" minWidth="-Infinity" prefWidth="90.0" text="Type"/>
+                                        <ComboBox fx:id="typeComboBox" prefWidth="200.0" promptText="Select Type"/>
+                                    </children>
+                                </HBox>
+                                <HBox alignment="CENTER" prefHeight="25.0" prefWidth="402.0" spacing="10.0">
+                                    <children>
+                                        <Label maxWidth="-Infinity" minWidth="-Infinity" prefWidth="90.0" text="Date"/>
+                                        <DatePicker fx:id="appointmentDatePicker" maxWidth="-Infinity"
+                                                    minWidth="-Infinity" prefWidth="200.0"/>
+                                    </children>
+                                </HBox>
+                                <HBox alignment="CENTER" layoutX="10.0" layoutY="185.0" prefHeight="25.0"
+                                      prefWidth="402.0" spacing="10.0">
+                                    <children>
+                                        <Label maxWidth="-Infinity" minWidth="-Infinity" prefWidth="90.0"
+                                               text="Start Time"/>
+                                        <ComboBox fx:id="startComboBox" prefWidth="200.0"
+                                                  promptText="Select Start Time"/>
+                                    </children>
+                                </HBox>
+                                <HBox alignment="CENTER" layoutX="10.0" layoutY="220.0" prefHeight="25.0"
+                                      prefWidth="402.0" spacing="10.0">
+                                    <children>
+                                        <Label maxWidth="-Infinity" minWidth="-Infinity" prefWidth="90.0"
+                                               text="End Time"/>
+                                        <ComboBox fx:id="endComboBox" prefWidth="200.0" promptText="Select End Time"/>
+                                    </children>
+                                </HBox>
+                                <HBox alignment="CENTER" layoutX="10.0" layoutY="275.0" prefHeight="25.0"
+                                      prefWidth="402.0" spacing="10.0">
+                                    <children>
+                                        <Label maxWidth="-Infinity" minWidth="-Infinity" prefWidth="90.0"
+                                               text="Customer ID"/>
+                                        <ComboBox fx:id="customerIDComboBox" onAction="#populateCustomerName"
+                                                  prefWidth="200.0" promptText="Select Customer"/>
+                                    </children>
+                                </HBox>
+                                <HBox alignment="CENTER" layoutX="10.0" layoutY="310.0" prefHeight="25.0"
+                                      prefWidth="402.0" spacing="10.0">
+                                    <children>
+                                        <Label maxWidth="-Infinity" minWidth="-Infinity" prefWidth="90.0"
+                                               text="Customer Name"/>
+                                        <TextField fx:id="customerName" disable="true" maxWidth="-Infinity"
+                                                   minWidth="-Infinity" prefWidth="200.0" promptText="Customer"/>
+                                    </children>
+                                </HBox>
+                                <HBox alignment="CENTER" layoutX="10.0" layoutY="275.0" prefHeight="25.0"
+                                      prefWidth="402.0" spacing="10.0">
+                                    <children>
+                                        <Label maxWidth="-Infinity" minWidth="-Infinity" prefWidth="90.0"
+                                               text="User ID"/>
+                                        <ComboBox fx:id="userIDComboBox" onAction="#populateUserName" prefWidth="200.0"
+                                                  promptText="Select User ID"/>
+                                    </children>
+                                </HBox>
+                                <HBox alignment="CENTER" layoutX="10.0" layoutY="310.0" prefHeight="25.0"
+                                      prefWidth="402.0" spacing="10.0">
+                                    <children>
+                                        <Label maxWidth="-Infinity" minWidth="-Infinity" prefWidth="90.0"
+                                               text="User Name"/>
+                                        <TextField fx:id="userName" disable="true" maxWidth="-Infinity"
+                                                   minWidth="-Infinity" prefWidth="200.0" promptText="Username"/>
+                                    </children>
+                                </HBox>
+                                <HBox alignment="CENTER" prefHeight="50.0" prefWidth="200.0" spacing="10.0">
+                                    <children>
+                                        <Button maxWidth="-Infinity" minWidth="-Infinity" mnemonicParsing="false"
+                                                onAction="#onActionSave" prefWidth="130.0" text="Save"/>
+                                        <Button layoutX="182.0" layoutY="23.0" maxWidth="-Infinity" minWidth="-Infinity"
+                                                mnemonicParsing="false" onAction="#onActionClearAllFields"
+                                                prefWidth="130.0" text="Clear"/>
+                                    </children>
+                                    <padding>
+                                        <Insets bottom="5.0"/>
+                                    </padding>
+                                </HBox>
+                            </children>
+                        </VBox>
+                        <TableView fx:id="appointmentTable" maxHeight="1.7976931348623157E308"
+                                   maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity"
+                                   prefHeight="541.0" prefWidth="1023.0">
+                            <columns>
+                                <TableColumn fx:id="appointmentColumn" prefWidth="103.0" text="Appointment ID"/>
+                                <TableColumn fx:id="titleColumn" prefWidth="71.0" text="Title"/>
+                                <TableColumn fx:id="descriptionColumn" prefWidth="134.0" text="Description"/>
+                                <TableColumn fx:id="locationColumn" prefWidth="150.0" text="Location"/>
+                                <TableColumn fx:id="contactColumn" prefWidth="145.0" text="Contact"/>
+                                <TableColumn fx:id="typeColumn" prefWidth="124.0" text="Type"/>
+                                <TableColumn fx:id="startColumn" prefWidth="108.6666259765625" text="Start"/>
+                                <TableColumn fx:id="endColumn" prefWidth="102.666748046875" text="End"/>
+                                <TableColumn fx:id="customerIDColumn" prefWidth="80.0001220703125" text="Customer ID"/>
+                            </columns>
+                        </TableView>
+                    </children>
+                </HBox>
+            </children>
+            <padding>
+                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0"/>
+            </padding>
+        </VBox>
+        <HBox layoutX="-2.0" layoutY="614.0" prefHeight="48.0" prefWidth="1381.0" spacing="10.0">
+            <children>
+                <HBox alignment="CENTER_RIGHT" prefHeight="39.0" prefWidth="1056.0" spacing="10.0">
+                    <children>
+                        <Button layoutX="433.0" layoutY="23.0" maxWidth="-Infinity" minWidth="-Infinity"
+                                mnemonicParsing="false" onAction="#onActionDelete" prefWidth="156.0"
+                                text="Cancel Appointment">
+                            <HBox.margin>
+                                <Insets right="100.0"/>
+                            </HBox.margin>
+                        </Button>
+                    </children>
+                </HBox>
+                <HBox alignment="CENTER" prefHeight="25.0" prefWidth="175.0" spacing="10.0">
+                    <children>
+                        <Button maxWidth="-Infinity" minWidth="-Infinity" mnemonicParsing="false"
+                                onAction="#onActionReturnToMainMenu" prefWidth="130.0" text="Return to Main Menu"/>
+                        <Button fx:id="ExitButton" maxWidth="-Infinity" minWidth="-Infinity" mnemonicParsing="false"
+                                onAction="#onActionExit" prefWidth="130.0" text="Exit"/>
+                    </children>
+                </HBox>
+            </children>
+        </HBox>
+    </children>
+</AnchorPane>
